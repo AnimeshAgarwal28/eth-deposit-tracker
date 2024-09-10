@@ -159,6 +159,43 @@ npm start
 - The application listens for deposit events.
 - New deposits are stored in MongoDB, logged in InfluxDB, and notifications are sent to the Telegram bot.
 
+## Output upon a new transaction
+
+```
+Listening for new Ethereum deposits to the Beacon Contract...
+New deposit detected: {
+  blockNumber: 20719912,
+  blockTimestamp: 1725967631,
+  fee: '0.002996069419534464',
+  hash: '0xdffc59524adfbcbf5e0fd726ee3488fca6426215d7976fe9ec10ed61578218b6',
+  pubkey: '0xa3c8b88e64f67a6f25f97d3501924361e4192e4a77be0d2d27a720be97b5bac0cb1fbd7dfaa33123c6ae677f1dd5a2e6'
+}
+
+Deposit stored in mongoDB: {
+  blockNumber: 20719912,
+  blockTimestamp: 1725967631,
+  fee: '0.002996069419534464',
+  hash: '0xdffc59524adfbcbf5e0fd726ee3488fca6426215d7976fe9ec10ed61578218b6',
+  pubkey: '0xa3c8b88e64f67a6f25f97d3501924361e4192e4a77be0d2d27a720be97b5bac0cb1fbd7dfaa33123c6ae677f1dd5a2e6',
+  _id: new ObjectId('66e02d17bc59745687d5aaf4')
+}
+
+Notification sent:
+        New Deposit Detected:
+        - Block Number: 20719912
+        - Block Timestamp: 1725967631
+        - Fee: 0.002996069419534464 ETH
+        - Transaction Hash: 0xdffc59524adfbcbf5e0fd726ee3488fca6426215d7976fe9ec10ed61578218b6
+        - Public Key: 0xa3c8b88e64f67a6f25f97d3501924361e4192e4a77be0d2d27a720be97b5bac0cb1fbd7dfaa33123c6ae677f1dd5a2e6
+
+```
+
+### Telegram Notification
+![Screenshot of telegram chat with bot](https://i.imgur.com/7WfwyFr.png)
+
+## Grafana Dashboard
+![Screenshot of a sample Grafana Dashboard](https://imgur.com/cr3Zx04.png)
+
 ## Monitoring and Visualization with Grafana
 To visualize deposit data in Grafana, set up an InfluxDB data source by connecting Grafana to InfluxDB using InfluxDB's URL: `http://localhost:8086` and the API key from your `.env` file. Create dashboards to display deposit logs.
 
