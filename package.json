@@ -1,0 +1,16 @@
+{
+    "name": "eth-deposite-tracker",
+    "version": "1.0.0",
+    "dependencies": {
+        "@influxdata/influxdb-client": "^1.35.0",
+        "alchemy-sdk": "^3.4.1",
+        "dotenv": "^16.4.5",
+        "ethers": "^5.7.2",
+        "mongodb": "^6.8.1",
+        "node-telegram-bot-api": "^0.66.0"
+    },
+    "main": "src/monitor.js",
+    "scripts": {
+        "start": "node ./src/monitor.js"
+    }
+}
