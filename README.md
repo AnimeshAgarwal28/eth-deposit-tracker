@@ -1,5 +1,21 @@
 # Ethereum Deposit Tracker
 
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀
+⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀
+⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀
+⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⣀⠀⠀⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⡆
+⣾⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⣀⡤⠖⠛⠉⠛⠶⣤⣀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣷
+⣿⣿⣿⣿⣿⣿⣿⣿⡿⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⠳⣿⣿⣿⣿⣿⣿⣿⣿
+⢿⣿⣿⣿⣿⣿⣿⣿⣿⡳⢦⣄⠀⠀⠀⠀⠀⠀⠀⣠⡴⢚⣿⣿⣿⣿⣿⣿⣿⡿
+⠸⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠈⠙⠶⣄⣀⣤⠖⠋⠁⣠⣿⣿⣿⣿⣿⣿⣿⣿⠇
+⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠉⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀
+⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀
+⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⢿⣿⣿⣿⣿⡿⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀
+
 I built this Ethereum deposit monitoring app to track deposits made to the Ethereum Beacon Deposit Contract (address: `0x00000000219ab540356cBB839Cbe05303d7705Fa`). It uses Alchemy's WebSocket API to fetch deposit events, stores them in MongoDB, and logs data in InfluxDB for real-time visualization with Grafana. Plus, it sends deposit notifications to a Telegram bot!
 
 ## Features
