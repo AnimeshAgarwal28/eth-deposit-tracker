@@ -57,6 +57,8 @@ const monitorNewDeposits = () => {
           blockNumber: event.blockNumber,
         },
       ];
+      //when an array of events is recieved it is sent to this function for
+      // processing multiple events in 1 transaction.
       await processDepositEvents(events);
     },
   );

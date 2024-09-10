@@ -75,6 +75,7 @@ const processDepositLog = async (
   }
 };
 
+// This function handles multipile deposits within a single transaction
 const processDepositEvents = async (events) => {
   for (const event of events) {
     const { pubkey, withdrawal_credentials, amount, signature, index } =
