@@ -1,4 +1,4 @@
-```bash
+```
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀
@@ -161,3 +161,50 @@ npm start
 
 ## Monitoring and Visualization with Grafana
 To visualize deposit data in Grafana, set up an InfluxDB data source by connecting Grafana to InfluxDB using InfluxDB's URL: `http://localhost:8086` and the API key from your `.env` file. Create dashboards to display deposit logs.
+
+## Here is a ASCII graph that explains what each file in the /src does:
+
+
+```
+                             +------------------------+
+                             |        monitor.js       |
+                             |------------------------|
+                             | - Connect to MongoDB    |
+                             | - Monitor new deposits  |
+                             +-----------+------------+
+                                         |
+                                         |
+                                         V
+                             +------------------------+
+                             |       contract.js      |
+                             |------------------------|
+                             | - Connect to Ethereum   |
+                             | - Set up ABI for Beacon |
+                             |   Deposit Contract      |
+                             | - Listen for DepositEvent |
+                             +-----------+------------+
+                                         |
+                                         |
+                                         V
+                     +-------------------+--------------------+
+                     |                                        |
+                     |                                        |
+                     V                                        V
+   +-------------------------+              +-------------------------+
+   |      eventProcess.js    |              |          db.js           |
+   |-------------------------|              |-------------------------|
+   | - Connect to InfluxDB   |              | - Connect to MongoDB     |
+   | - Process DepositEvent  |              | - Store deposit data     |
+   |   logs                  |              +-----------+-------------+
+   | - Write data to InfluxDB|                          |
+   | - Send Telegram alerts  |                          |
+   +-----------+-------------+                          |
+               |                                        |
+               |                                        |
+               V                                        V
+    +---------------------+                    +--------------------------+
+    |    telegramBot.js   |                    |    Data Storage (MongoDB,|
+    |----------------------|                    |    InfluxDB, etc.)        |
+    | - Send notifications |                    | - Store deposit records  |
+    +----------------------+                    +--------------------------+
+```
