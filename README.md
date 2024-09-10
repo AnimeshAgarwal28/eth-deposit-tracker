@@ -245,3 +245,7 @@ To visualize deposit data in Grafana, set up an InfluxDB data source by connecti
     | - Send notifications |                    | - Store deposit records  |
     +----------------------+                    +--------------------------+
 ```
+## System metrices using InfluxDB
+InfluxDB also makes a default dashboard for system metrics which is highly customizable, here is my dashboard.
+
+![InfluxDB screenshot](https://imgur.com/a/4fw8G5m)
